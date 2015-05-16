@@ -1,0 +1,19 @@
+{
+    "name": "Autofiller",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description" : "Autofills username and password on popular email and social media websites(yahoo,gmail,facebook,pinterest,netflix) as well as berkeley sites",
+  	"icons": { "16": "icon_16.png",
+             "128": "icon_128.png" },
+  	"browser_action": { 
+  		"default_icon": {
+  			"16": "icon_16",
+  			"128": "icon_128"
+  		},
+  		"default_popup": "popup.html"
+  	},
+    "content_scripts": [{
+        "matches": ["https://www.facebook.com/*", "https://www.pinterest.com/*", "https://www.netflix.com/*", "https://login.yahoo.com/*", "https://accounts.google.com/*", "https://auth.berkeley.edu/*"],
+        "js": ["js/jquery-2.1.1.js", "js/content.js"]
+    }]
+}
